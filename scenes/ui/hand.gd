@@ -9,7 +9,7 @@ var card_played_this_turn := 0
 
 
 func _ready() -> void:
-	Events.card_played.emit(_on_card_played)
+	Events.card_played.connect(_on_card_played)
 	
 		
 func add_card(card: Card) -> void:
