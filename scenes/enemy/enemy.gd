@@ -8,8 +8,8 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var arrow: Sprite2D = $Arrow
-@onready var stats_ui: StatsUI = $StatsUI as StatsUI
-@onready var intent_ui: IntentUI = $IntentUI as IntentUI
+@onready var stats_ui: StatsUI = $StatsUI
+@onready var intent_ui: IntentUI = $IntentUI
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
