@@ -3,7 +3,7 @@ extends Node2D
 @export var char_stats: CharacterStats
 @export var music: AudioStream
 
-@onready var battle_UI: BattleUI = $BattleUI
+@onready var battle_ui: BattleUI = $BattleUI
 @onready var player_handler: PlayerHandler = $PlayerHandler
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
 @onready var player: Player = $Player
@@ -14,7 +14,7 @@ func _ready() -> void:
 	# level so we keep our health, gold and deck
 	# between battles.
 	var new_stats: CharacterStats = char_stats.create_instance()
-	battle_UI.char_stats = new_stats
+	battle_ui.char_stats = new_stats
 	player.stats = new_stats
 	
 	enemy_handler.child_order_changed.connect(_on_enemies_child_order_changed)
@@ -25,7 +25,8 @@ func _ready() -> void:
 	Events.player_dies.connect(_on_player_dies)
 	
 	start_battle(new_stats)
-
+	battle_ui.initialize_card_pile_ui()
+	
 
 func start_battle(stats: CharacterStats) -> void:
 	get_tree().paused = false
