@@ -1,4 +1,4 @@
-class_name RunStarup
+class_name RunStartup
 extends Resource
 
 enum Type {NEW_RUN, CONTINUED_RUN}
